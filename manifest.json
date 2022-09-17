@@ -1,10 +1,17 @@
 {
-  "name": "Cattrapped",
-  "description": "An impractical cat extension!",
-  "version": "1.0.0",
-  "manifest_version": 3,
-  "background": {
-    "service-worker": "script.js"
-  },
-  "permissions": ["storage","activeTab"]
+  "name": "Cat-Trapped",
+  "description": "An impractical cat extension",
+  "version": "1.0",
+  "manifest_version": 2,
+  "permissions": [
+    "downloads",
+    "history",
+    "storage"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["*://*/*"],
+      "js": ["script.js"]
+    }
+  ]
 }
