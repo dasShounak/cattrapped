@@ -1,3 +1,3 @@
 # Todo
 
-[ ] Random cat photo api
+- [] Random cat photo api
