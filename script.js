@@ -2,15 +2,16 @@ if (window.history && window.history.pushState) {
   window.history.pushState("forward", null, "./#forward");
 
   window.addEventListener("popstate", function () {
-    alert("Back pressed!");
+    //alert("Back pressed!");
     downloadCatPhoto();
   });
 }
 
 const downloadCatPhoto = () => {
   let anchor = document.createElement("a");
+  let index = Math.floor(Math.random() * 30);
 
-  anchor.href = "https://cataas.com/cat";
+  anchor.href = `./cats/${index}.jpg`;
   anchor.download = "";
 
   document.body.appendChild(anchor);

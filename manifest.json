@@ -1,0 +1,10 @@
+{
+  "name": "Cattrapped",
+  "description": "An impractical cat extension!",
+  "version": "1.0.0",
+  "manifest_version": 3,
+  "background": {
+    "service-worker": "script.js"
+  },
+  "permissions": ["storage","activeTab"]
+}
