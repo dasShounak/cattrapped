@@ -1,20 +1,21 @@
-if (window.history && window.history.pushState) {
-  window.history.pushState("forward", null, "./#forward");
+const preventBack = () => {
+  window.history.forward();
+  downloadCatPhoto();
+};
 
-  window.addEventListener("popstate", function () {
-    //alert("Back pressed!");
-    downloadCatPhoto();
-  });
-}
+setTimeout("preventBack()", 0);
+window.onunload = () => {
+  null;
+};
 
 const downloadCatPhoto = () => {
   let anchor = document.createElement("a");
   let index = Math.floor(Math.random() * 30);
 
-  anchor.href = `./cats/${index}.jpg`;
-  anchor.download = "";
+  anchor.href = `/cats/${index}.jpg`;
+  anchor.download = "cat.jpg";
 
   document.body.appendChild(anchor);
   anchor.click();
   document.body.removeChild(anchor);
-}
+};
